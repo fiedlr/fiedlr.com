@@ -238,9 +238,6 @@ AddDefaultCharset utf-8
     # (1)
     RewriteEngine On
 
-    # RewriteCond %{HTTP_HOST} ^fiedlr.sk [NC]
-    # RewriteRule ^(.*)$ http://fiedler.sk/$1 [R=301,NC]
-
     # (2)
     Options +FollowSymlinks
 

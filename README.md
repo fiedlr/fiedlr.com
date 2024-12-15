@@ -1,4 +1,4 @@
-This is the source code for [my personal webpage](http://fiedlr.sk/).
+This is the source code for [my personal webpage](https://fiedlr.com/).
 
 The webpage falls under regular copyright laws and its code is available here only _as a reference_. This means you should NOT use it as a template for another website. Check [Hakyll's website](https://jaspervdj.be/hakyll) for better examples.
 
