@@ -114,4 +114,5 @@ If we let AI do it for us, we essentially say we do not bother making decisions 
 - The specifications can contain "bugs" if they imply unintended consequences, and this is why formal training is still necessary. We can still be in a better place by thinking about tests thoroughly. If we do not have the experience with verification, we should turn to someone who can for the critical parts.
 - We should start building an app around tests. To let an AI generate an app and produce *all* the tests for it is like playing a slot machine.
 
-If you are interested more in this approach for your company, write me an e-mail.
+If you are interested more in this approach for your company, I'd love to hear your thoughts.
+Let's connect on LinkedIn, comment there, or feel free to write me an e-mail.
