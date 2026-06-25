@@ -61,7 +61,7 @@ More rules can under some contexts lead to a bigger space of possibilities.
 - The app should allow some users to play Moonlight Sonata three times.
 ```
 
-I guess you see where this is headed.
+If it's not clear how this prompt can make the situation worse, let me know in the comments.
 
 Again, we need to have formal training in logic to understand this.
 Again and again, AI cannot replace our understanding.
