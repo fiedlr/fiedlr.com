@@ -24,15 +24,15 @@ Make an app that plays Moonlight Sonata two times.
 ```
 
 Let's say the AI is smart enough to ask us what kind of app, on what platform, etc.
-The LLM goes ahead and creates the app for us, but the app plays the song three times.
+The AI agent goes ahead and creates the app for us, but the app plays the song three times.
 Surely the AI must have hallucinated?
 The answer is that the app is perfectly fine because our request is met: the app plays Moonlight Sonata (at least) two times.
-A person has to have formal training in order to understand that an LLM can decide on its own how to interpret such a sentence.
+A person has to have formal training in order to understand that an agent can decide on its own how to interpret such a sentence.
 If we don't understand this distinction in language precision, we cannot possibly know how to delegate mission-critical apps to AI agents.
 There are two points I will be trying to make:
 
 1) The human language *alone* cannot serve as *the basis* for app building because it lacks precision.
-2) Our understanding cannot be replaced by an LLM. We should be aware of what decisions we are delegating and I'll be sharing my thoughts on how.
+2) Our understanding cannot be replaced by an agent. We should be aware of what decisions we are delegating and I'll be sharing my thoughts on how.
 
 As a note, I'll be saying the word "app building" to mean any sort of activity that produces a piece of software.
 
@@ -52,7 +52,7 @@ Consider the following prompt.
 - The app should not play Moonlight Sonata three times.
 ```
 
-The LLM goes ahead and creates such an app, but the app plays three times again.
+The agent goes ahead and creates such an app, but the app plays three times again.
 Can you see why?
 
 It's even worse.
@@ -68,12 +68,12 @@ If it's not clear how this prompt can make the situation worse, let me know in t
 Again, we need to have formal training in logic to understand this.
 Again and again, AI cannot replace our understanding.
 If you leave everything to its whims, you are not really building your app but just playing a slot machine.
-It also doesn't matter how many LLM judges we have because thay also make decisions on their own.
+It also doesn't matter how many AI judges we have because thay also make decisions on their own.
 How do we get around this?
 
-> Our LLM agents will inevitably make decisions for us.
+> Our AI agents will inevitably make decisions for us.
 > This is fine for some decisions, but not for all of them.
-> Our task is to *think ahead* what decisions we leave up to the LLM.
+> Our task is to *think ahead* what decisions we leave up to the agent.
 > We can do this by *determing the properties* we expect and specifying them in a formal way.
 
 We should think ahead of time what properties should definitely hold and enforce them by specifying them in a precise way (ideally not in a human language).
@@ -99,11 +99,11 @@ they are essential especially in this day and age.
 The workflow I'm suggesting is built on top of test-driven development (TDD) as follows:
 
 1. We ourselves have to give the specifications for the code at a proper level of abstraction.
-2. For these specifications, we should write the skeleton of the most crucial tests ourselves (it can totally be assisted by an LLM, but not vibe-coded).
+2. For these specifications, we should write the skeleton of the most crucial tests ourselves (it can totally be assisted by an agent, but not vibe-coded).
 3. We write the code that satisfies the specifications in 1) and the skeleton tests in 2), and/or let agents generate some parts of it.
 4. We transform the test skeletons to real tests.
 5. We cover more test cases using *fuzzers*. Fuzzers are much more effective in covering a huge area of choices than letting AI generate test cases for us.
-6. Only after we ran out of options with fuzzers, we can vibe-code generate numerous additional test cases using LLMs.
+6. Only after we ran out of options with fuzzers, we can vibe-code generate numerous additional test cases using AI agents.
 7. We iterate code modifications until all the tests pass.
 8. We should continually run and maintain our test suite to make sure that properties given by our specifications hold.
 9. We formalize the specifications once the main components of our code are fixed.
