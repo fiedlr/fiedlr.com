@@ -74,7 +74,7 @@ How do we get around this?
 > Our task is to *think ahead* what decisions we leave up to the LLM.
 > We can do this by *determing the properties* we expect and specifying them in a formal way.
 
-In other words, we should think ahead of time what properties should definitely
+We should think ahead of time what properties should definitely
 hold and enforce them by specifying them in a precise way (ideally not in a human language).
 And this is nothing else than the good old *specification-driven programming*.
 
@@ -97,11 +97,11 @@ they are essential especially in this day and age.
 
 1. We ourselves have to give the specifications for the code.
 2. We can then write the most crucial tests ourselves or make a really thorough review of the generated tests (up to you).
-3. We should then test that properties given by our specifications hold at least in extreme cases (given by unit tests).
-4. We generate more use cases using *fuzzers*. Fuzzers are much more effective in covering a huge area of choices than letting AI generate tests for us.
-5. Only after we ran out of options with fuzzers, we can generate some test cases using LLMs.
-6. We write the code that satisfies and/or let agents generate some parts of it.
-7. We verify the crucial components of our implemented app using verifiers, or get *a person* who can do it for us.
+3. We generate more use cases using *fuzzers*. Fuzzers are much more effective in covering a huge area of choices than letting AI generate tests for us.
+4. Only after we ran out of options with fuzzers, we can generate some test cases using LLMs.
+5. We write the code that satisfies and/or let agents generate some parts of it.
+6. We should continually test that properties given by our specifications hold at least in extreme cases (given by unit tests).
+7. We should continually verify the crucial components of our implemented app using verifiers, or get *a person* who can do it for us.
 
 # The Take-aways
 

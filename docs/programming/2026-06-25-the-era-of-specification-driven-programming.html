@@ -80,18 +80,18 @@
 <blockquote>
 <p>Our LLM agents will inevitably make decisions for us. This is fine for some decisions, but not for all of them. Our task is to <em>think ahead</em> what decisions we leave up to the LLM. We can do this by <em>determing the properties</em> we expect and specifying them in a formal way.</p>
 </blockquote>
-<p>In other words, we should think ahead of time what properties should definitely hold and enforce them by specifying them in a precise way (ideally not in a human language). And this is nothing else than the good old <em>specification-driven programming</em>.</p>
+<p>We should think ahead of time what properties should definitely hold and enforce them by specifying them in a precise way (ideally not in a human language). And this is nothing else than the good old <em>specification-driven programming</em>.</p>
 <h1 id="the-specification-driven-workflow">The Specification-driven Workflow</h1>
 <p>We specify properties first, then we write code and/or let the agents generate code. We specify properties first especially because we want to use AIs to produce code for us. This is why specification-driven programming is more relevant now than ever. In an ideal world, we then <em>verify</em> these properties using a verifier. Verifiers are special programs that can take a property in some formal language as input and <em>guarantee</em> that this property holds for a given program. As the LLMs cannot replace our own understanding, they cannot write the specifications for us. We cannot prompt our way out of this. However, you do not need to be trained in logic to start.</p>
 <p>We make a full circle and go back to the thing we all find annoying: testing. Tests are the only way to keep anyone grounded in what an app is actually doing. They are not a replacement for verification (e.g., see my <a href="https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive">article on this</a>) but they are essential especially in this day and age.</p>
 <ol type="1">
 <li>We ourselves have to give the specifications for the code.</li>
 <li>We can then write the most crucial tests ourselves or make a really thorough review of the generated tests (up to you).</li>
-<li>We should then test that properties given by our specifications hold at least in extreme cases (given by unit tests).</li>
 <li>We generate more use cases using <em>fuzzers</em>. Fuzzers are much more effective in covering a huge area of choices than letting AI generate tests for us.</li>
 <li>Only after we ran out of options with fuzzers, we can generate some test cases using LLMs.</li>
 <li>We write the code that satisfies and/or let agents generate some parts of it.</li>
-<li>We verify the crucial components of our implemented app using verifiers, or get <em>a person</em> who can do it for us.</li>
+<li>We should continually test that properties given by our specifications hold at least in extreme cases (given by unit tests).</li>
+<li>We should continually verify the crucial components of our implemented app using verifiers, or get <em>a person</em> who can do it for us.</li>
 </ol>
 <h1 id="the-take-aways">The Take-aways</h1>
 <ul>
