@@ -9,7 +9,7 @@ We can build apps around specifications and let agents generate code that meet
 our specifications.
 This is why specification-driven programming is more relevant now than ever.
 "
-tags: ai, logic, verification, tests, fuzzing, abstractions
+tags: ai, logic, verification, testing, fuzzing, specifications
 ---
 
 Everybody who studied mathematics or computer science in a bit more detail
