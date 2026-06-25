@@ -5,8 +5,10 @@ teaser: "People tend to say that AI is bringing programming to a higher layer
 of abstraction: the human language. However, there's a big elephant in the room.
 Any human language is vague. I argue here that the next layer of abstraction
 might as well be formal specifications grounded in logic.
-We can build apps around specifications and let agents generate code that meet
+We can build apps around specifications and let agents generate code that satisfy
 our specifications.
+Our specifications also determine what kinds of decisions about code we delegate
+to the LLMs.
 This is why specification-driven development is more relevant now than ever.
 "
 tags: ai, logic, verification, testing, fuzzing, specifications
