@@ -5,10 +5,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Adam Fiedler">
-    <title>The Era of Specification-Driven Programming | Adam Fiedler</title>
-    <meta name="description" content="People tend to say that AI is bringing programming to a higher layer of abstraction: the human language. However, there's a big elephant in the room. Any human language is vague. I argue here that the next layer of abstraction might as well be formal specifications grounded in logic. We can build apps around specifications and let agents generate code that meet our specifications. This is why specification-driven programming is more relevant now than ever. ">
-    <meta property="og:title" content="The Era of Specification-Driven Programming | Adam Fiedler">
-    <meta property="og:description" content="People tend to say that AI is bringing programming to a higher layer of abstraction: the human language. However, there's a big elephant in the room. Any human language is vague. I argue here that the next layer of abstraction might as well be formal specifications grounded in logic. We can build apps around specifications and let agents generate code that meet our specifications. This is why specification-driven programming is more relevant now than ever. ">
+    <title>The Era of Specification-Driven Development | Adam Fiedler</title>
+    <meta name="description" content="People tend to say that AI is bringing programming to a higher layer of abstraction: the human language. However, there's a big elephant in the room. Any human language is vague. I argue here that the next layer of abstraction might as well be formal specifications grounded in logic. We can build apps around specifications and let agents generate code that meet our specifications. This is why specification-driven development is more relevant now than ever. ">
+    <meta property="og:title" content="The Era of Specification-Driven Development | Adam Fiedler">
+    <meta property="og:description" content="People tend to say that AI is bringing programming to a higher layer of abstraction: the human language. However, there's a big elephant in the room. Any human language is vague. I argue here that the next layer of abstraction might as well be formal specifications grounded in logic. We can build apps around specifications and let agents generate code that meet our specifications. This is why specification-driven development is more relevant now than ever. ">
     <meta property="og:type" content="article">
     <meta property="og:article:author" content="Adam Fiedler">
     <meta property="og:url" content="https://fiedler.sk/programming/2026-06-25-the-era-of-specification-driven-programming.html">
@@ -40,7 +40,7 @@
     <main role="main">
         <div class="body">
             <div class="title">
-                <h1>The Era of Specification-Driven Programming</h1>
+                <h1>The Era of Specification-Driven Development</h1>
             </div>
             <article>
     <section class="meta">
@@ -52,7 +52,7 @@
     <section class="body">
         
             
-            <p>People tend to say that AI is bringing programming to a higher layer of abstraction: the human language. However, there's a big elephant in the room. Any human language is vague. I argue here that the next layer of abstraction might as well be formal specifications grounded in logic. We can build apps around specifications and let agents generate code that meet our specifications. This is why specification-driven programming is more relevant now than ever. </p>
+            <p>People tend to say that AI is bringing programming to a higher layer of abstraction: the human language. However, there's a big elephant in the room. Any human language is vague. I argue here that the next layer of abstraction might as well be formal specifications grounded in logic. We can build apps around specifications and let agents generate code that meet our specifications. This is why specification-driven development is more relevant now than ever. </p>
             
         
         <p>Everybody who studied mathematics or computer science in a bit more detail should realize that human language suffers from vagueness and ambuiguity. Not only AIs tend to hallucinate, we ourselves tend to phrase things imprecisely. Consider the following prompt:</p>
@@ -80,12 +80,12 @@
 <blockquote>
 <p>Our LLM agents will inevitably make decisions for us. This is fine for some decisions, but not for all of them. Our task is to <em>think ahead</em> what decisions we leave up to the LLM. We can do this by <em>determing the properties</em> we expect and specifying them in a formal way.</p>
 </blockquote>
-<p>We should think ahead of time what properties should definitely hold and enforce them by specifying them in a precise way (ideally not in a human language). This way we know what decisions we are delegating and what properties to check for in our app before we start building. And this is nothing else than the good old <em>specification-driven programming</em>.</p>
+<p>We should think ahead of time what properties should definitely hold and enforce them by specifying them in a precise way (ideally not in a human language). This way we know what decisions we are delegating and what properties to check for in our app before we start building. And this is nothing else than the good old <em>specification-driven development</em>.</p>
 <h1 id="the-specification-driven-workflow">The Specification-driven Workflow</h1>
-<p>We specify properties first, then we write code and/or let the agents generate code. We specify properties first especially because we want to use AIs to produce code for us. This is why specification-driven programming is more relevant now than ever. In an ideal world, we then <em>verify</em> these properties using a verifier. Verifiers are special programs that can take a property in some formal language as input and <em>guarantee</em> that this property holds for a given program. As the LLMs cannot replace our own understanding, they cannot write the specifications for us. We cannot prompt our way out of this. However, you do not need to be trained in logic to start.</p>
+<p>We specify properties first, then we write code and/or let the agents generate code. We specify properties first especially because we want to use AIs to produce code for us. This is why specification-driven development is more relevant now than ever. In an ideal world, we then <em>verify</em> these properties using a verifier. Verifiers are special programs that can take a property in some formal language as input and <em>guarantee</em> that this property holds for a given program. As the LLMs cannot replace our own understanding, they cannot write the specifications for us. We cannot prompt our way out of this. However, you do not need to be trained in logic to start.</p>
 <p>We make a full circle and go back to the thing we all find annoying: testing. Tests are the only way to keep anyone grounded in what an app is actually doing. They are not a replacement for verification (e.g., see my <a href="https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive">article on this</a>) but they are essential especially in this day and age. The workflow I’m suggesting is built on top of test-driven development (TDD) as follows:</p>
 <ol type="1">
-<li>We ourselves have to give the specifications for the code.</li>
+<li>We ourselves have to give the specifications for the code at a proper level of abstraction.</li>
 <li>For these specifications, we should write the skeleton of the most crucial tests ourselves (it can totally be assisted by an LLM, but not vibe-coded).</li>
 <li>We write the code that satisfies the specifications in 1) and the skeleton tests in 2), and/or let agents generate some parts of it.</li>
 <li>We transform the test skeletons to real tests.</li>
@@ -93,11 +93,11 @@
 <li>Only after we ran out of options with fuzzers, we can vibe-code generate numerous additional test cases using LLMs.</li>
 <li>We iterate code modifications until all the tests pass.</li>
 <li>We should continually run and maintain our test suite to make sure that properties given by our specifications hold.</li>
-<li>We formalize the specifications</li>
+<li>We formalize the specifications once the main components of our code are fixed.</li>
 <li>We should continually verify the crucial components of our implemented app using verifiers, or get <em>a person</em> who can do it for us.</li>
 </ol>
-<p>Test skeletons might be tricky to come up with before you see the code, but that is the point. They force you to think about the problem ahead of time. One can get enough experience to choose the right level of abstraction for 2). I might be dealing with this in some other article.</p>
-<p>However, specification-driven programming doesn’t necessarily require TDD. The essential part here is to write specifications first, think of the properties first. You can choose to what extent you formalize them ahead of time.</p>
+<p>Test skeletons might be tricky to come up with before you see the code, but that is the point. They force you to think about the problem ahead of time. One can get enough experience to choose the right level of abstraction for the specifications that you write before any code is programmed and/or generated. I might be dealing with this in some other article.</p>
+<p>However, keep in mind that specification-driven development doesn’t necessarily require TDD. The essential part here is to come up with specifications first, think of the properties first. You can choose to what extent and how you formalize these specifications ahead of time.</p>
 <h1 id="the-take-aways">The Take-aways</h1>
 <p>To sum up, these are the main points I have been making here.</p>
 <ul>

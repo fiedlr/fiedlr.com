@@ -1,5 +1,5 @@
 ---
-title: The Era of Specification-Driven Programming
+title: The Era of Specification-Driven Development
 author: Adam Fiedler
 teaser: "People tend to say that AI is bringing programming to a higher layer
 of abstraction: the human language. However, there's a big elephant in the room.
@@ -7,7 +7,7 @@ Any human language is vague. I argue here that the next layer of abstraction
 might as well be formal specifications grounded in logic.
 We can build apps around specifications and let agents generate code that meet
 our specifications.
-This is why specification-driven programming is more relevant now than ever.
+This is why specification-driven development is more relevant now than ever.
 "
 tags: ai, logic, verification, testing, fuzzing, specifications
 ---
@@ -76,13 +76,13 @@ How do we get around this?
 
 We should think ahead of time what properties should definitely hold and enforce them by specifying them in a precise way (ideally not in a human language).
 This way we know what decisions we are delegating and what properties to check for in our app before we start building.
-And this is nothing else than the good old *specification-driven programming*.
+And this is nothing else than the good old *specification-driven development*.
 
 # The Specification-driven Workflow
 
 We specify properties first, then we write code and/or let the agents generate code.
 We specify properties first especially because we want to use AIs to produce code for us.
-This is why specification-driven programming is more relevant now than ever.
+This is why specification-driven development is more relevant now than ever.
 In an ideal world, we then *verify* these properties using a verifier.
 Verifiers are special programs that can take a property in some formal language as input and *guarantee* that this
 property holds for a given program.
@@ -96,7 +96,7 @@ They are not a replacement for verification (e.g., see my [article on this](http
 they are essential especially in this day and age.
 The workflow I'm suggesting is built on top of test-driven development (TDD) as follows:
 
-1. We ourselves have to give the specifications for the code.
+1. We ourselves have to give the specifications for the code at a proper level of abstraction.
 2. For these specifications, we should write the skeleton of the most crucial tests ourselves (it can totally be assisted by an LLM, but not vibe-coded).
 3. We write the code that satisfies the specifications in 1) and the skeleton tests in 2), and/or let agents generate some parts of it.
 4. We transform the test skeletons to real tests.
@@ -104,17 +104,18 @@ The workflow I'm suggesting is built on top of test-driven development (TDD) as 
 6. Only after we ran out of options with fuzzers, we can vibe-code generate numerous additional test cases using LLMs.
 7. We iterate code modifications until all the tests pass.
 8. We should continually run and maintain our test suite to make sure that properties given by our specifications hold.
-9. We formalize the specifications
+9. We formalize the specifications once the main components of our code are fixed.
 10. We should continually verify the crucial components of our implemented app using verifiers, or get *a person* who can do it for us.
 
 Test skeletons might be tricky to come up with before you see the code, but that is the point.
 They force you to think about the problem ahead of time.
-One can get enough experience to choose the right level of abstraction for 2).
+One can get enough experience to choose the right level of abstraction for the specifications
+that you write before any code is programmed and/or generated.
 I might be dealing with this in some other article.
 
-However, specification-driven programming doesn't necessarily require TDD.
-The essential part here is to write specifications first, think of the properties first.
-You can choose to what extent you formalize them ahead of time.
+However, keep in mind that specification-driven development doesn't necessarily require TDD.
+The essential part here is to come up with specifications first, think of the properties first.
+You can choose to what extent and how you formalize these specifications ahead of time.
 
 # The Take-aways
 
