@@ -17,7 +17,9 @@ should realize that human language suffers from vagueness and ambuiguity.
 Not only AIs tend to hallucinate, we ourselves tend to phrase things
 Consider the following example:
 
-> Make an app that plays Moonlight Sonata two times.
+```
+- Make an app that plays Moonlight Sonata two times.
+```
 
 The LLM goes ahead and creates such an app, but the app plays three times.
 Surely the AI must have hallucinated?
@@ -44,8 +46,10 @@ And the most important thing:
 
 Consider the following example.
 
-> Make an app that plays Moonlight Sonata two times.
-> The app should not play Moonlight Sonata three times.
+```
+- Make an app that plays Moonlight Sonata two times.
+- The app should not play Moonlight Sonata three times.
+```
 
 The LLM goes ahead and creates such an app, but the app plays three times again.
 Can you see why?
@@ -53,8 +57,10 @@ Can you see why?
 It's even worse.
 More rules can create more chaos.
 
-> Make an app that plays Moonlight Sonata two times.
-> The app should not play Moonlight Sonata three times.
+```
+- Make an app that plays Moonlight Sonata two times.
+- The app should not play Moonlight Sonata three times.
+```
 
 Again, we need to have formal training in logic to understand this.
 Again and again, AI cannot replace our understanding.
@@ -84,7 +90,7 @@ However, you do not need to be trained in logic to start.
 
 We make a full circle and go back to the thing we all find annoying: testing.
 Tests are the only way to keep anyone grounded in what an app is actually doing.
-They are not a replacement for verification (e.g., see my [https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive](article on this)) but
+They are not a replacement for verification (e.g., see my [article on this](https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive)) but
 they are essential especially in this day and age.
 
 1. We ourselves have to give the specifications for the code.
