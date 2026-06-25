@@ -14,30 +14,28 @@ tags: ai, logic, verification, testing, fuzzing, specifications
 
 Everybody who studied mathematics or computer science in a bit more detail
 should realize that human language suffers from vagueness and ambuiguity.
-Not only AIs tend to hallucinate, we ourselves tend to phrase things
+Not only AIs tend to hallucinate, we ourselves tend to phrase things imprecisely.
 Consider the following prompt:
 
-```
+```markdown
 Make an app that plays Moonlight Sonata two times.
 ```
 
-Let's say the AI is smart to ask us what kind of app, on what platform, etc.
-The LLM goes ahead and creates an app for us, but the app plays three times.
+Let's say the AI is smart enough to ask us what kind of app, on what platform, etc.
+The LLM goes ahead and creates the app for us, but the app plays the song three times.
 Surely the AI must have hallucinated?
-The answer is that the app is perfectly fine because the specification is met:
-the app plays Moonlight Sonata (at least) two times.
-A person has to have formal training in order to understand that the LLM can decide on its own how to interpret such a sentence.
-If we don't understand this distinction in language precision, we cannot build apps.
-There are two take-aways here:
+The answer is that the app is perfectly fine because our request is met: the app plays Moonlight Sonata (at least) two times.
+A person has to have formal training in order to understand that an LLM can decide on its own how to interpret such a sentence.
+If we don't understand this distinction in language precision, we cannot build mission-critical apps on our own.
+There are three points I will be trying to make:
 
-1) Our understanding cannot be replaced by an LLM.
-2) The human language *alone* cannot serve as *the basis* for app building of any kind precisely because it lacks precision.
+1) Our understanding cannot be replaced by an LLM. We should be aware of what decisions we are delegating.
+2) The human language *alone* cannot serve as *the basis* for app building because it lacks precision.
 
 As a note, I'll be saying the word "app building" to mean any sort of activity that produces a piece of software.
 
-# Any solutions?
+# The Problem
 
-How do we get around this?
 We cannot resolve this matter with adding more and more "rules" or "skills".
 Think of it like this: an English sentence limits the number of possibilities for a generated code, but even if the AI does not hallucinate on its own,
 the number of possibilities is simply always too big.
@@ -47,7 +45,7 @@ And the most important thing:
 
 Consider the following prompt.
 
-```
+```markdown
 - Make an app that plays Moonlight Sonata two times.
 - The app should not play Moonlight Sonata three times.
 ```
@@ -58,7 +56,7 @@ Can you see why?
 It's even worse.
 More rules can under some contexts lead to a bigger space of possibilities.
 
-```
+```markdown
 - Make an app that plays Moonlight Sonata exactly two times.
 - The app should allow some users to play Moonlight Sonata three times.
 ```
@@ -69,6 +67,7 @@ Again, we need to have formal training in logic to understand this.
 Again and again, AI cannot replace our understanding.
 If you leave everything to its whims, you are not really building your app but just playing a slot machine.
 It also doesn't matter how many LLM judges we have because thay make decisions *for us*.
+How do we get around this?
 
 > Our LLM agents will inevitably make decisions for us.
 > This is fine for some decisions, but not for all of them.
