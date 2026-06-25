@@ -5,10 +5,10 @@ teaser: "People tend to say that AI is bringing programming to a higher layer
 of abstraction: the human language. However, there's a big elephant in the room.
 Any human language is vague. I argue here that the next layer of abstraction
 might as well be formal specifications grounded in logic.
-We can build apps around specifications and let agents generate code that satisfy
+We can build apps around specifications and let AI agents generate code that satisfy
 our specifications.
 Our specifications also determine what kinds of decisions about code we delegate
-to the LLMs.
+to the agents.
 This is why specification-driven development is more relevant now than ever.
 "
 tags: ai, logic, verification, testing, fuzzing, specifications
@@ -88,7 +88,7 @@ This is why specification-driven development is more relevant now than ever.
 In an ideal world, we then *verify* these properties using a verifier.
 Verifiers are special programs that can take a property in some formal language as input and *guarantee* that this
 property holds for a given program.
-As the LLMs cannot replace our own understanding, they cannot write the specifications for us.
+As the agents cannot replace our own understanding, they cannot write the specifications for us.
 We cannot prompt our way out of this.
 However, you do not need to be trained in logic to start.
 
@@ -125,10 +125,10 @@ To sum up, these are the main points I have been making here.
 
 - Human language alone is too imprecise to serve as a basis for app-building.
 - We have to think ahead of time about the properties and specify them *formally* as specifications.
-We cannot do this post-hoc if we want LLMs to generate most of the code.
+We cannot do this post-hoc if we want agents to generate most of the code.
 - By giving our specifications, we essentially design and determine the main properties we expect from our app.
 If we let AI do it for us, we essentially say we do not bother making decisions anymore.
-- By giving our specifications, we also determine what sort of *decisions* we delegate to the LLMs.
+- By giving our specifications, we also determine what sort of *decisions* we delegate to the agents.
 - The specifications can contain "bugs" if they imply unintended consequences, and this is why formal training is still necessary. We can still be in a better place by thinking about tests thoroughly. If we do not have the experience with verification, we should turn to someone who can for the critical parts.
 - We should start building an app around tests. To let an AI generate an app and produce *all* the tests for it is like playing a slot machine.
 
