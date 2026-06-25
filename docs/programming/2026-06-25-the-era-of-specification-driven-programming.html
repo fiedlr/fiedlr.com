@@ -83,17 +83,23 @@
 <p>We should think ahead of time what properties should definitely hold and enforce them by specifying them in a precise way (ideally not in a human language). This way we know what decisions we are delegating and what properties to check for in our app before we start building. And this is nothing else than the good old <em>specification-driven programming</em>.</p>
 <h1 id="the-specification-driven-workflow">The Specification-driven Workflow</h1>
 <p>We specify properties first, then we write code and/or let the agents generate code. We specify properties first especially because we want to use AIs to produce code for us. This is why specification-driven programming is more relevant now than ever. In an ideal world, we then <em>verify</em> these properties using a verifier. Verifiers are special programs that can take a property in some formal language as input and <em>guarantee</em> that this property holds for a given program. As the LLMs cannot replace our own understanding, they cannot write the specifications for us. We cannot prompt our way out of this. However, you do not need to be trained in logic to start.</p>
-<p>We make a full circle and go back to the thing we all find annoying: testing. Tests are the only way to keep anyone grounded in what an app is actually doing. They are not a replacement for verification (e.g., see my <a href="https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive">article on this</a>) but they are essential especially in this day and age.</p>
+<p>We make a full circle and go back to the thing we all find annoying: testing. Tests are the only way to keep anyone grounded in what an app is actually doing. They are not a replacement for verification (e.g., see my <a href="https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive">article on this</a>) but they are essential especially in this day and age. The workflow I’m suggesting is built on top of test-driven development (TDD) as follows:</p>
 <ol type="1">
 <li>We ourselves have to give the specifications for the code.</li>
-<li>For these specifications, we should write the most crucial tests ourselves (it can totally be assisted by an LLM, but not vibe-coded).</li>
+<li>For these specifications, we should write the skeleton of the most crucial tests ourselves (it can totally be assisted by an LLM, but not vibe-coded).</li>
+<li>We write the code that satisfies the specifications in 1) and the skeleton tests in 2), and/or let agents generate some parts of it.</li>
+<li>We transform the test skeletons to real tests.</li>
 <li>We cover more test cases using <em>fuzzers</em>. Fuzzers are much more effective in covering a huge area of choices than letting AI generate test cases for us.</li>
 <li>Only after we ran out of options with fuzzers, we can vibe-code generate numerous additional test cases using LLMs.</li>
-<li>We write the code that satisfies the specifications in 1) and/or let agents generate some parts of it.</li>
-<li>We should continually run our test suite to make sure that properties given by our specifications hold.</li>
+<li>We iterate code modifications until all the tests pass.</li>
+<li>We should continually run and maintain our test suite to make sure that properties given by our specifications hold.</li>
+<li>We formalize the specifications</li>
 <li>We should continually verify the crucial components of our implemented app using verifiers, or get <em>a person</em> who can do it for us.</li>
 </ol>
+<p>Test skeletons might be tricky to come up with before you see the code, but that is the point. They force you to think about the problem ahead of time. One can get enough experience to choose the right level of abstraction for 2). I might be dealing with this in some other article.</p>
+<p>However, specification-driven programming doesn’t necessarily require TDD. The essential part here is to write specifications first, think of the properties first. You can choose to what extent you formalize them ahead of time.</p>
 <h1 id="the-take-aways">The Take-aways</h1>
+<p>To sum up, these are the main points I have been making here.</p>
 <ul>
 <li>Human language alone is too imprecise to serve as a basis for app-building.</li>
 <li>We have to think ahead of time about the properties and specify them <em>formally</em> as specifications. We cannot do this post-hoc if we want LLMs to generate most of the code.</li>
