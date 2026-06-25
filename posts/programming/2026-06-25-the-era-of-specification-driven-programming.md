@@ -27,10 +27,10 @@ Surely the AI must have hallucinated?
 The answer is that the app is perfectly fine because our request is met: the app plays Moonlight Sonata (at least) two times.
 A person has to have formal training in order to understand that an LLM can decide on its own how to interpret such a sentence.
 If we don't understand this distinction in language precision, we cannot possibly know how to delegate mission-critical apps to AI agents.
-There are three points I will be trying to make:
+There are two points I will be trying to make:
 
-1) Our understanding cannot be replaced by an LLM. We should be aware of what decisions we are delegating.
-2) The human language *alone* cannot serve as *the basis* for app building because it lacks precision.
+1) The human language *alone* cannot serve as *the basis* for app building because it lacks precision.
+2) Our understanding cannot be replaced by an LLM. We should be aware of what decisions we are delegating and I'll be sharing my thoughts on how.
 
 As a note, I'll be saying the word "app building" to mean any sort of activity that produces a piece of software.
 
@@ -66,7 +66,7 @@ If it's not clear how this prompt can make the situation worse, let me know in t
 Again, we need to have formal training in logic to understand this.
 Again and again, AI cannot replace our understanding.
 If you leave everything to its whims, you are not really building your app but just playing a slot machine.
-It also doesn't matter how many LLM judges we have because thay make decisions *for us*.
+It also doesn't matter how many LLM judges we have because thay also make decisions on their own.
 How do we get around this?
 
 > Our LLM agents will inevitably make decisions for us.
@@ -74,8 +74,8 @@ How do we get around this?
 > Our task is to *think ahead* what decisions we leave up to the LLM.
 > We can do this by *determing the properties* we expect and specifying them in a formal way.
 
-We should think ahead of time what properties should definitely
-hold and enforce them by specifying them in a precise way (ideally not in a human language).
+We should think ahead of time what properties should definitely hold and enforce them by specifying them in a precise way (ideally not in a human language).
+This way we know what decisions we are delegating and what properties to check for in our app before we start building.
 And this is nothing else than the good old *specification-driven programming*.
 
 # The Specification-driven Workflow
