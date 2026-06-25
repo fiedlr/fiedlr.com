@@ -26,7 +26,7 @@ The LLM goes ahead and creates the app for us, but the app plays the song three 
 Surely the AI must have hallucinated?
 The answer is that the app is perfectly fine because our request is met: the app plays Moonlight Sonata (at least) two times.
 A person has to have formal training in order to understand that an LLM can decide on its own how to interpret such a sentence.
-If we don't understand this distinction in language precision, we cannot build mission-critical apps on our own.
+If we don't understand this distinction in language precision, we cannot possibly know how to delegate mission-critical apps to AI agents.
 There are three points I will be trying to make:
 
 1) Our understanding cannot be replaced by an LLM. We should be aware of what decisions we are delegating.
