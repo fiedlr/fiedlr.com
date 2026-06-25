@@ -1,0 +1,90 @@
+---
+title: The Era of Specification-Driven Programming
+author: Adam Fiedler
+teaser: "People tend to say that AI is bringing programming to a higher layer
+of abstraction: the human language. However, there's a big elephant in the room.
+Any human language is vague. I argue here that the next layer of abstraction
+might as well be formal specifications grounded in logic.
+We can build apps around specifications and let prompts generate code that meet
+our specifications.
+"
+tags: ai, logic, verification, tests, fuzzing, abstractions
+---
+
+Everybody who studied mathematics or computer science in a bit more detail
+should realize that human language suffers from vagueness and ambuiguity.
+Not only AIs tend to hallucinate, we ourselves tend to phrase things
+Consider the following example:
+
+> Make an app that plays Moonlight Sonata two times.
+
+The LLM goes ahead and creates such an app, but the app plays three times.
+Surely the AI must have hallucinated?
+The answer is that the app is perfectly fine because the specification is met:
+the app plays Moonlight Sonata (at least) two times.
+A person has to have formal training in order to understand that the LLM can decide on its own how to interpret such a sentence.
+If we don't understand this distinction in language precision, we cannot build apps.
+There are two take-aways here:
+
+1) Our understanding cannot be replaced by an LLM.
+2) The human language alone cannot serve as the basis for programming of any kind precisely because it lacks precision.
+
+# Any solutions?
+
+How do we get around this?
+We cannot resolve this matter with adding more and more "rules" or "skills".
+Think of it like this: an English sentence limits the number of possibilities for a generated code, but even if the AI does not hallucinate on its own,
+the number of possibilities is simply always too big.
+And the most important thing:
+> By putting English sentences in a context, you do not necessarily make the space smaller!
+
+Consider the following example.
+
+
+Again, you need to have formal training in logic to understand this.
+Again and again, AI cannot replace your understanding.
+If you leave everything to its whims, you are not really building your app but just playing a slot machine.
+It also doesn't matter how many LLM judges we have because thay make decisions *for us*.
+
+> Our LLM agents will inevitably make decisions for us.
+> This is fine for some decisions, but not for all of them.
+> Our task is to *think ahead* what decisions we leave up to the LLM.
+> We can do this by *determing the properties* we expect and specifying them in a formal way.
+
+In other words, we should think ahead of time what properties should definitely
+hold and enforce them by specifying them in a precise way (ideally not in a human language).
+And this is nothing else than the good old *specification-driven programming*.
+
+# The Specification-driven Workflow
+
+We specify properties first, then we write code and/or let the agents generate code.
+In an ideal world, we then *verify* these properties using a verifier.
+Verifiers are special programs that can take a property in some formal language as input and *guarantee* that this
+property holds for a given program.
+As the LLMs cannot replace our own understanding, they cannot write the specifications for us.
+We cannot prompt our way out of this.
+However, you do not need to be trained in logic to start.
+
+We make a full circle and go back to the thing we all find annoying: testing.
+Tests are the only way to keep anyone grounded in what an app is actually doing.
+They are not a replacement for verification (e.g., see my (https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive)[article on this]) but
+they are essential especially in this day and age.
+
+1. We ourselves have to give the specifications for the code.
+2. We can then write the most crucial tests ourselves or make a really thorough review of the generated tests (up to you).
+3. We should then test that properties given by our specifications hold at least in extreme cases (given by unit tests).
+4. We cover edge cases
+5. We verify the crucial components of our app using verifiers, or get *a person* who can do it for us.
+
+# The Take Aways
+
+By giving the specifications, we essentially design and determine the main properties we expect from our app.
+This is what we still expect software developers to do.
+If we let AI do this, we essentially say we do not bother making decisions anymore.
+
+Moreover, the specifications can contain "bugs" if they imply unintended consequences, and this is why formal training is still necessary.
+Verification is not always feasible on large-scale projects.
+We should also think of how to split the system into as little pieces as possible.
+If we do not have the experience with verification, we should turn
+
+If you are interested more in this approach for your company, write me an e-mail.
