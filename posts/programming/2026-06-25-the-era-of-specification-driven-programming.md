@@ -96,11 +96,11 @@ They are not a replacement for verification (e.g., see my [article on this](http
 they are essential especially in this day and age.
 
 1. We ourselves have to give the specifications for the code.
-2. We can then write the most crucial tests ourselves or make a really thorough review of the generated tests (up to you).
-3. We generate more use cases using *fuzzers*. Fuzzers are much more effective in covering a huge area of choices than letting AI generate tests for us.
-4. Only after we ran out of options with fuzzers, we can generate some test cases using LLMs.
-5. We write the code that satisfies and/or let agents generate some parts of it.
-6. We should continually test that properties given by our specifications hold at least in extreme cases (given by unit tests).
+2. For these specifications, we should write the most crucial tests ourselves (it can totally be assisted by an LLM, but not vibe-coded).
+3. We cover more test cases using *fuzzers*. Fuzzers are much more effective in covering a huge area of choices than letting AI generate test cases for us.
+4. Only after we ran out of options with fuzzers, we can vibe-code generate numerous additional test cases using LLMs.
+5. We write the code that satisfies the specifications in 1) and/or let agents generate some parts of it.
+6. We should continually run our test suite to make sure that properties given by our specifications hold.
 7. We should continually verify the crucial components of our implemented app using verifiers, or get *a person* who can do it for us.
 
 # The Take-aways

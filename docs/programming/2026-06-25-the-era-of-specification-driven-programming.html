@@ -86,11 +86,11 @@
 <p>We make a full circle and go back to the thing we all find annoying: testing. Tests are the only way to keep anyone grounded in what an app is actually doing. They are not a replacement for verification (e.g., see my <a href="https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive">article on this</a>) but they are essential especially in this day and age.</p>
 <ol type="1">
 <li>We ourselves have to give the specifications for the code.</li>
-<li>We can then write the most crucial tests ourselves or make a really thorough review of the generated tests (up to you).</li>
-<li>We generate more use cases using <em>fuzzers</em>. Fuzzers are much more effective in covering a huge area of choices than letting AI generate tests for us.</li>
-<li>Only after we ran out of options with fuzzers, we can generate some test cases using LLMs.</li>
-<li>We write the code that satisfies and/or let agents generate some parts of it.</li>
-<li>We should continually test that properties given by our specifications hold at least in extreme cases (given by unit tests).</li>
+<li>For these specifications, we should write the most crucial tests ourselves (it can totally be assisted by an LLM, but not vibe-coded).</li>
+<li>We cover more test cases using <em>fuzzers</em>. Fuzzers are much more effective in covering a huge area of choices than letting AI generate test cases for us.</li>
+<li>Only after we ran out of options with fuzzers, we can vibe-code generate numerous additional test cases using LLMs.</li>
+<li>We write the code that satisfies the specifications in 1) and/or let agents generate some parts of it.</li>
+<li>We should continually run our test suite to make sure that properties given by our specifications hold.</li>
 <li>We should continually verify the crucial components of our implemented app using verifiers, or get <em>a person</em> who can do it for us.</li>
 </ol>
 <h1 id="the-take-aways">The Take-aways</h1>
