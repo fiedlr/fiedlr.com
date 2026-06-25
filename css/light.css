@@ -25,6 +25,9 @@ header {
   width:100%;
   text-align:center
 }
+blockquote {
+  font-style: itallic;
+}
 .body {
   max-width:60rem;
   margin:0 auto
