@@ -39,9 +39,11 @@ We cannot resolve this matter with adding more and more "rules" or "skills".
 Think of it like this: an English sentence limits the number of possibilities for a generated code, but even if the AI does not hallucinate on its own,
 the number of possibilities is simply always too big.
 And the most important thing:
+
 > By putting English sentences in a context, you do not necessarily make the space smaller!
 
 Consider the following example.
+
 > Make an app that plays Moonlight Sonata two times.
 > The app should not play Moonlight Sonata three times.
 
@@ -50,6 +52,7 @@ Can you see why?
 
 It's even worse.
 More rules can create more chaos.
+
 > Make an app that plays Moonlight Sonata two times.
 > The app should not play Moonlight Sonata three times.
 
@@ -81,7 +84,7 @@ However, you do not need to be trained in logic to start.
 
 We make a full circle and go back to the thing we all find annoying: testing.
 Tests are the only way to keep anyone grounded in what an app is actually doing.
-They are not a replacement for verification (e.g., see my (https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive)[article on this]) but
+They are not a replacement for verification (e.g., see my [https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive](article on this)) but
 they are essential especially in this day and age.
 
 1. We ourselves have to give the specifications for the code.
