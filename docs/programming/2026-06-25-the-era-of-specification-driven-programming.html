@@ -55,9 +55,9 @@
             <p>People tend to say that AI is bringing programming to a higher layer of abstraction: the human language. However, there's a big elephant in the room. Any human language is vague. I argue here that the next layer of abstraction might as well be formal specifications grounded in logic. We can build apps around specifications and let agents generate code that meet our specifications. This is why specification-driven programming is more relevant now than ever. </p>
             
         
-        <p>Everybody who studied mathematics or computer science in a bit more detail should realize that human language suffers from vagueness and ambuiguity. Not only AIs tend to hallucinate, we ourselves tend to phrase things Consider the following example:</p>
-<pre><code>- Make an app that plays Moonlight Sonata two times.</code></pre>
-<p>The LLM goes ahead and creates such an app, but the app plays three times. Surely the AI must have hallucinated? The answer is that the app is perfectly fine because the specification is met: the app plays Moonlight Sonata (at least) two times. A person has to have formal training in order to understand that the LLM can decide on its own how to interpret such a sentence. If we don’t understand this distinction in language precision, we cannot build apps. There are two take-aways here:</p>
+        <p>Everybody who studied mathematics or computer science in a bit more detail should realize that human language suffers from vagueness and ambuiguity. Not only AIs tend to hallucinate, we ourselves tend to phrase things Consider the following prompt:</p>
+<pre><code>Make an app that plays Moonlight Sonata two times.</code></pre>
+<p>Let’s say the AI is smart to ask us what kind of app, on what platform, etc. The LLM goes ahead and creates an app for us, but the app plays three times. Surely the AI must have hallucinated? The answer is that the app is perfectly fine because the specification is met: the app plays Moonlight Sonata (at least) two times. A person has to have formal training in order to understand that the LLM can decide on its own how to interpret such a sentence. If we don’t understand this distinction in language precision, we cannot build apps. There are two take-aways here:</p>
 <ol type="1">
 <li>Our understanding cannot be replaced by an LLM.</li>
 <li>The human language <em>alone</em> cannot serve as <em>the basis</em> for app building of any kind precisely because it lacks precision.</li>
@@ -68,13 +68,14 @@
 <blockquote>
 <p>By putting English sentences in a context, you do not necessarily make the space smaller!</p>
 </blockquote>
-<p>Consider the following example.</p>
+<p>Consider the following prompt.</p>
 <pre><code>- Make an app that plays Moonlight Sonata two times.
 - The app should not play Moonlight Sonata three times.</code></pre>
 <p>The LLM goes ahead and creates such an app, but the app plays three times again. Can you see why?</p>
-<p>It’s even worse. More rules can create more chaos.</p>
-<pre><code>- Make an app that plays Moonlight Sonata two times.
-- The app should not play Moonlight Sonata three times.</code></pre>
+<p>It’s even worse. More rules can under some contexts lead to a bigger space of possibilities.</p>
+<pre><code>- Make an app that plays Moonlight Sonata exactly two times.
+- The app should allow some users to play Moonlight Sonata three times.</code></pre>
+<p>I guess you see where this is headed.</p>
 <p>Again, we need to have formal training in logic to understand this. Again and again, AI cannot replace our understanding. If you leave everything to its whims, you are not really building your app but just playing a slot machine. It also doesn’t matter how many LLM judges we have because thay make decisions <em>for us</em>.</p>
 <blockquote>
 <p>Our LLM agents will inevitably make decisions for us. This is fine for some decisions, but not for all of them. Our task is to <em>think ahead</em> what decisions we leave up to the LLM. We can do this by <em>determing the properties</em> we expect and specifying them in a formal way.</p>

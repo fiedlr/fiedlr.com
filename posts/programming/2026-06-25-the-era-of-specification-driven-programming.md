@@ -15,13 +15,14 @@ tags: ai, logic, verification, testing, fuzzing, specifications
 Everybody who studied mathematics or computer science in a bit more detail
 should realize that human language suffers from vagueness and ambuiguity.
 Not only AIs tend to hallucinate, we ourselves tend to phrase things
-Consider the following example:
+Consider the following prompt:
 
 ```
-- Make an app that plays Moonlight Sonata two times.
+Make an app that plays Moonlight Sonata two times.
 ```
 
-The LLM goes ahead and creates such an app, but the app plays three times.
+Let's say the AI is smart to ask us what kind of app, on what platform, etc.
+The LLM goes ahead and creates an app for us, but the app plays three times.
 Surely the AI must have hallucinated?
 The answer is that the app is perfectly fine because the specification is met:
 the app plays Moonlight Sonata (at least) two times.
@@ -44,7 +45,7 @@ And the most important thing:
 
 > By putting English sentences in a context, you do not necessarily make the space smaller!
 
-Consider the following example.
+Consider the following prompt.
 
 ```
 - Make an app that plays Moonlight Sonata two times.
@@ -55,12 +56,14 @@ The LLM goes ahead and creates such an app, but the app plays three times again.
 Can you see why?
 
 It's even worse.
-More rules can create more chaos.
+More rules can under some contexts lead to a bigger space of possibilities.
 
 ```
-- Make an app that plays Moonlight Sonata two times.
-- The app should not play Moonlight Sonata three times.
+- Make an app that plays Moonlight Sonata exactly two times.
+- The app should allow some users to play Moonlight Sonata three times.
 ```
+
+I guess you see where this is headed.
 
 Again, we need to have formal training in logic to understand this.
 Again and again, AI cannot replace our understanding.
