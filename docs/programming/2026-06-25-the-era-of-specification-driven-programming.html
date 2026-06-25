@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Adam Fiedler">
+    <title>The Era of Specification-Driven Programming | Adam Fiedler</title>
+    <meta name="description" content="People tend to say that AI is bringing programming to a higher layer of abstraction: the human language. However, there's a big elephant in the room. Any human language is vague. I argue here that the next layer of abstraction might as well be formal specifications grounded in logic. We can build apps around specifications and let agents generate code that meet our specifications. This is why specification-driven programming is more relevant now than ever. ">
+    <meta property="og:title" content="The Era of Specification-Driven Programming | Adam Fiedler">
+    <meta property="og:description" content="People tend to say that AI is bringing programming to a higher layer of abstraction: the human language. However, there's a big elephant in the room. Any human language is vague. I argue here that the next layer of abstraction might as well be formal specifications grounded in logic. We can build apps around specifications and let agents generate code that meet our specifications. This is why specification-driven programming is more relevant now than ever. ">
+    <meta property="og:type" content="article">
+    <meta property="og:article:author" content="Adam Fiedler">
+    <meta property="og:url" content="https://fiedler.sk/programming/2026-06-25-the-era-of-specification-driven-programming.html">
+    <meta property="og:image" content="https://fiedler.sk/images/og.jpg">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/light.css?new=3">
+    <link rel="stylesheet" type="text/css" href="../css/syntax.css">
+    
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/og.jpg" alt="A headshot of Adam Fiedler" class="round">
+            <div class="caption">Adam Fiedler</div>
+        </div>
+        <nav>
+            <a href="../">Home</a>
+            <a href="../opinion">Opinion</a> <a href="../programming">Programming</a> <a href="../verification">Verification</a>
+            <a href="../talks">Talks</a>
+            <a href="../publications">Publications</a>
+            <a href="../about">About</a>
+        </nav>
+    </header>
+    <main role="main">
+        <div class="body">
+            <div class="title">
+                <h1>The Era of Specification-Driven Programming</h1>
+            </div>
+            <article>
+    <section class="meta">
+        Posted on June 25, 2026 in <a href="../programming">Programming</a>
+        
+        
+        
+    </section>
+    <section class="body">
+        
+            
+            <p>People tend to say that AI is bringing programming to a higher layer of abstraction: the human language. However, there's a big elephant in the room. Any human language is vague. I argue here that the next layer of abstraction might as well be formal specifications grounded in logic. We can build apps around specifications and let agents generate code that meet our specifications. This is why specification-driven programming is more relevant now than ever. </p>
+            
+        
+        <p>Everybody who studied mathematics or computer science in a bit more detail should realize that human language suffers from vagueness and ambuiguity. Not only AIs tend to hallucinate, we ourselves tend to phrase things Consider the following example:</p>
+<blockquote>
+<p>Make an app that plays Moonlight Sonata two times.</p>
+</blockquote>
+<p>The LLM goes ahead and creates such an app, but the app plays three times. Surely the AI must have hallucinated? The answer is that the app is perfectly fine because the specification is met: the app plays Moonlight Sonata (at least) two times. A person has to have formal training in order to understand that the LLM can decide on its own how to interpret such a sentence. If we don’t understand this distinction in language precision, we cannot build apps. There are two take-aways here:</p>
+<ol type="1">
+<li>Our understanding cannot be replaced by an LLM.</li>
+<li>The human language <em>alone</em> cannot serve as <em>the basis</em> for app building of any kind precisely because it lacks precision.</li>
+</ol>
+<p>As a note, I’ll be saying the word “app building” to mean any sort of activity that produces a piece of software.</p>
+<h1 id="any-solutions">Any solutions?</h1>
+<p>How do we get around this? We cannot resolve this matter with adding more and more “rules” or “skills”. Think of it like this: an English sentence limits the number of possibilities for a generated code, but even if the AI does not hallucinate on its own, the number of possibilities is simply always too big. And the most important thing: &gt; By putting English sentences in a context, you do not necessarily make the space smaller!</p>
+<p>Consider the following example. &gt; Make an app that plays Moonlight Sonata two times. &gt; The app should not play Moonlight Sonata three times.</p>
+<p>The LLM goes ahead and creates such an app, but the app plays three times again. Can you see why?</p>
+<p>It’s even worse. More rules can create more chaos. &gt; Make an app that plays Moonlight Sonata two times. &gt; The app should not play Moonlight Sonata three times.</p>
+<p>Again, we need to have formal training in logic to understand this. Again and again, AI cannot replace our understanding. If you leave everything to its whims, you are not really building your app but just playing a slot machine. It also doesn’t matter how many LLM judges we have because thay make decisions <em>for us</em>.</p>
+<blockquote>
+<p>Our LLM agents will inevitably make decisions for us. This is fine for some decisions, but not for all of them. Our task is to <em>think ahead</em> what decisions we leave up to the LLM. We can do this by <em>determing the properties</em> we expect and specifying them in a formal way.</p>
+</blockquote>
+<p>In other words, we should think ahead of time what properties should definitely hold and enforce them by specifying them in a precise way (ideally not in a human language). And this is nothing else than the good old <em>specification-driven programming</em>.</p>
+<h1 id="the-specification-driven-workflow">The Specification-driven Workflow</h1>
+<p>We specify properties first, then we write code and/or let the agents generate code. We specify properties first especially because we want to use AIs to produce code for us. This is why specification-driven programming is more relevant now than ever. In an ideal world, we then <em>verify</em> these properties using a verifier. Verifiers are special programs that can take a property in some formal language as input and <em>guarantee</em> that this property holds for a given program. As the LLMs cannot replace our own understanding, they cannot write the specifications for us. We cannot prompt our way out of this. However, you do not need to be trained in logic to start.</p>
+<p>We make a full circle and go back to the thing we all find annoying: testing. Tests are the only way to keep anyone grounded in what an app is actually doing. They are not a replacement for verification (e.g., see my (https://adamfiedler.com/verification/2022-11-02-warning-code-can-be-explosive)[article on this]) but they are essential especially in this day and age.</p>
+<ol type="1">
+<li>We ourselves have to give the specifications for the code.</li>
+<li>We can then write the most crucial tests ourselves or make a really thorough review of the generated tests (up to you).</li>
+<li>We should then test that properties given by our specifications hold at least in extreme cases (given by unit tests).</li>
+<li>We generate more use cases using <em>fuzzers</em>. Fuzzers are much more effective in covering a huge area of choices than letting AI generate tests for us.</li>
+<li>Only after we ran out of options with fuzzers, we can generate some test cases using LLMs.</li>
+<li>We write the code that satisfies and/or let agents generate some parts of it.</li>
+<li>We verify the crucial components of our implemented app using verifiers, or get <em>a person</em> who can do it for us.</li>
+</ol>
+<h1 id="the-take-aways">The Take-aways</h1>
+<ul>
+<li>Human language alone is too imprecise to serve as a basis for app-building.</li>
+<li>We have to think ahead of time about the properties and specify them <em>formally</em> as specifications. We cannot do this post-hoc if we want LLMs to generate most of the code.</li>
+<li>By giving our specifications, we essentially design and determine the main properties we expect from our app. If we let AI do it for us, we essentially say we do not bother making decisions anymore.</li>
+<li>The specifications can contain “bugs” if they imply unintended consequences, and this is why formal training is still necessary. We can still be in a better place by thinking about tests thoroughly. If we do not have the experience with verification, we should turn to someone who can for the critical parts.</li>
+<li>We should start building an app around tests. To let an AI generate an app and produce <em>all</em> the tests for it is like playing a slot machine.</li>
+</ul>
+<p>If you are interested more in this approach for your company, write me an e-mail.</p>
+    </section>
+    
+    <section class="footer">
+        <div class="line"></div>
+        Read more articles on: <a href="../topics/ai">ai</a>, <a href="../topics/logic">logic</a>, <a href="../topics/verification">verification</a>, <a href="../topics/tests">tests</a>, <a href="../topics/fuzzing">fuzzing</a>, <a href="../topics/abstractions">abstractions</a>.
+    </section>
+    
+</article>
+
+            <p>
+                <a href="#" class="btn up"><i class="fa fa-arrow-up"></i>
+                <span class="sr-only">Go up</span></a>
+            </p>
+        </div>
+    </main>
+    <footer>
+        <div class="body">
+            &copy; Adam Fiedler 2026
+            <div class="heart">
+                Running with &hearts; on
+                <a href="https://jaspervdj.be/hakyll">Hakyll</a>. Here's the <a href="https://github.com/fiedlr/fiedlr.com">source</a>.
+            </div>
+        </div>
+        <div class="social">
+            <a class="em" href="mailto:hello@fiedlr.com">
+                <i class="fa fa-envelope"><span class="sr-only">Write me an e-mail</span></i>
+            </a>
+            <a class="li" href="https://linkedin.com/in/fiedlr">
+                <i class="fa fa-linkedin"><span class="sr-only">I'm on LinkedIn</span></i>
+            </a>
+            <a class="gh" href="https://github.com/fiedlr">
+                <i class="fa fa-github"><span class="sr-only">My GitHub projects</span></i>
+            </a>
+        </div>
+    </footer>
+    
+</body>
+</html>
